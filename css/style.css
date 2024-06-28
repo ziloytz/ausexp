@@ -1,0 +1,990 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nanum', sans-serif;
+}
+
+div {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  height: 600px;
+  width: 100%;
+  background-image: url(../project/victoria.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Header text */
+header h1 {
+  text-align: left;
+  position: absolute;
+  top: 100px;
+  padding-top: 30px;
+  padding-left: 1px;
+  font-size: 5em;
+  color: black;
+  text-align: center;
+}
+
+header a:link,
+header a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* Ensure header content is aligned to the middle and moved down */
+#intro {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  height: 600px; /* Adjust height as needed */
+  background-color: #f0f0f0; /* Example background color */
+}
+
+#intro > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#object {
+  list-style: none;
+  font-family: "ZCOOL", monospace;
+  font-size: 1.5em;
+  text-align: left; /* Align text to the left within the container */
+}
+
+#object li {
+  margin-top: 15px;
+}
+
+#object li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+#object li a {
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Ensure the :after pseudo-element is positioned relative to the <a> tag */
+  color: darkolivegreen;
+}
+
+#object li a:hover {
+  text-decoration: none; /* Remove default underline on hover */
+}
+
+#object li a::after {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust as needed to position the underline */
+  width: 100%;
+  height: 2px; /* Thickness of the underline */
+  background-color: darkolivegreen; /* Color of the underline */
+  transition: bottom 0.3s ease; /* Smooth transition for the underline */
+}
+
+#object li a:hover::after {
+  bottom: -10px; /* Adjust to move the underline position on hover */
+}
+
+#intro p {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #object {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+
+
+
+/* Menu styles */
+#menu {
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#menu h1 {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+
+#menu a:link,
+#menu a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  color: grey;
+}
+
+#up {
+  list-style: none;
+  font-family: "Nanum", sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+  right: 25px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#up li {
+  display: inline;
+  margin-left: 30px;
+  border-bottom: 2px solid black;
+}
+
+#menu-toggle {
+  display: none; /* Hide the toggle button by default */
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 30px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  #menu {
+    height: auto; /* Adjust height to fit content */
+  }
+
+  #menu h1 {
+    position: relative; /* Change positioning to fit in the flow */
+    top: 0;
+    left: 0;
+    margin: 10px 0 0 10px; /* Adjust margin for spacing */
+  }
+
+  #menu-toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  #up {
+    display: none; /* Hide the regular menu */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  #up li {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border-bottom: none;
+  }
+
+  #menu.open #up {
+    display: flex; /* Display the dropdown menu */
+  }
+}
+
+
+
+
+
+
+#sub-packages{
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+/*package*/
+
+
+#packages {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.package-item {
+  position: relative;
+  text-align: center;
+}
+
+.package-item a {
+  display: block;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.package-item a:hover {
+  background-color: #ccc;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+.package-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover {
+  background-color: #ccc;
+}
+
+
+/* About section */
+#about {
+  padding: 100px 0;
+  text-align: center;
+}
+
+#about h3 {
+  font-family: 'ZCOOL', monospace;
+  font-size: 30px;
+}
+
+#about p {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+
+/* AJ section */
+#aj {
+  background-color: #f9f9f9;
+  background-size: cover;
+  padding: 50px 0;
+  background-position: center center;
+  text-align: center;
+}
+
+#aj h3,
+#aj h2,
+#aj p {
+  font-family: 'Noto', sans-serif;
+}
+.aj-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.aj-images figure {
+  flex: 1 1 300px; /* Force each figure to have a fixed width of 300px */
+  max-width: 300px; /* Limit maximum width of each figure */
+  text-align: center; /* Center content horizontally */
+  margin-bottom: 20px; /* Add bottom margin for spacing */
+  height: 200px; /* Explicitly set a fixed height for uniformity */
+}
+
+.aj-images img {
+  width: 100%; /* Ensure images fill the figure container */
+  height: 100%; /* Ensure images fill the height of the figure */
+  object-fit: cover; /* Maintain aspect ratio and cover the figure */
+  border-radius: 8px;
+  border: 5px solid #ece0c8;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* Target all <li> elements within the specified sections */
+#aj li,
+#comment li {
+  list-style: none; /* Remove default bullets */
+}
+
+#aj hr {
+  margin: 20px 0; /* Margin above and below the horizontal line */
+  border: none; /* Remove default border */
+  border-top: 2px solid #ccc; /* Thicker line with 2px solid color */
+  clear: both; /* Ensure no floating elements interfere */
+}
+
+
+#aj h2
+/* Additional styling for indentation and padding (if needed) */
+#aj li {
+  margin-left: 20px; /* Adjust margin-left as per your design */
+}
+
+#comment li {
+  margin-left: 20px; /* Adjust margin-left as per your design */
+}
+
+
+#aj p {
+  margin-bottom: 40px;
+}
+
+
+/* Welldone section */
+#welldone {
+  background-image: url(../project/koala2.jpg);
+  background-size: cover;
+  height: 700px;
+  background-attachment: fixed, scroll;
+  background-blend-mode: multiply;
+  background-color: rgba(38, 36, 36, 0.597);
+  text-align: center;
+}
+
+#welldone h2,
+#welldone p {
+  font-family: 'Oswald', sans-serif;
+}
+
+#welldone h2 {
+  color: #ece0c8;
+  padding-top: 20%;
+}
+
+#welldone p {
+  color: #f9f9f9;
+}
+
+/* Loewe section */
+#loewe {
+  height: 800px;
+  background-color: #cccccc;
+  text-align: center;
+}
+
+#loewe figure img {
+  width: 90%;
+  height: auto;
+  max-width: 800px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+#loewe h2,
+#loewe h3,
+#loewe p {
+  font-family: 'Domine', serif;
+}
+
+
+
+
+/* Container for Weibo and Figures */
+#comment {
+  display: flex;
+  flex-direction: row; /* Default to row layout */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  width: 100%; /* Ensure the container takes up the full width */
+}
+
+@media (max-width: 768px) {
+  #comment {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center align items on small screens */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+}
+
+/* Weibo Container */
+.weiboShowContainer {
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  margin-bottom: 20px; /* Add space between Weibo and Figures */
+  width: 100%; /* Ensure full width */
+}
+
+.WB_widgets.weiboShow {
+  height: auto; /* Allow height to adjust */
+  margin: 0 auto; /* Center horizontally */
+  width: 100%; /* Ensure full width */
+}
+
+#weibo_show {
+  text-align: center; /* Center content within */
+  width: 100%;
+  height: 100%;
+}
+
+#weibo {
+  width: 100%; /* Make sure the iframe fills its container */
+  height: 620px; /* Set a specific height for the iframe */
+}
+
+/* Figures Container */
+.figures {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: row; /* Default to row layout */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%; /* Ensure full width */
+}
+
+.figures figure {
+  text-align: center; /* Center-align the figures */
+  margin: 10px; /* Add margin for spacing */
+  width: calc(33.333% - 20px); /* Three figures per row with 20px total margin */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.figures figure img {
+  max-width: 100%; /* Ensure images resize proportionally */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add border radius */
+  border: 10px solid #ece0c8; /* Optional: Add border */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.75); /* Optional: Add box shadow */
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 768px) {
+  .figures {
+    flex-direction: column; /* Stack figures vertically on small screens */
+    align-items: center; /* Center align figures on small screens */
+  }
+
+  .figures figure {
+    width: 100%; /* Full width for each figure on small screens */
+    margin: 10px 0; /* Adjust margin for vertical layout */
+  }
+
+  .weiboShowContainer {
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  #weibo {
+    height: 500px; /* Adjust height for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  #weibo {
+    height: 580px; /* Further adjust height for very small screens */
+  }
+}
+
+
+/* Panel Head */
+.panel_head {
+  text-align: left; /* Align text to the left */
+  padding-left: 20px; /* Optional: Add padding for spacing */
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+/* Footer styles */
+footer {
+  background-color: rgb(42, 42, 42);
+  font-family: 'Oswald', sans-serif;
+  padding: 20px 0;
+  text-align: center;
+  color: #ece0c8;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ece0c8;
+}
+
+footer a:hover {
+  color: grey;
+}
+
+footer p {
+  margin: 5px 0;
+
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  div {
+    width: 100%;
+  }
+
+  #menu h1 {
+    font-size: 1.5em;
+    left: 10px;
+  }
+
+  #up {
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  header p {
+    font-size: 1.5em;
+    right: 5%;
+  }
+
+  #object {
+    font-size: 1em;
+    top: 100px;
+  }
+
+  #about p,
+  #aj p,
+  #welldone p,
+  #loewe p {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  #aj figure img,
+  #loewe figure img {
+    width: 100%;
+  }
+
+  footer p {
+    font-size: 0.8em;
+  }
+}
+
+/* Hot Place*/
+
+.hot-place{
+  width: 75%;
+}
+
+/*  GOR   */
+
+
+#GOR_img{
+
+}
+
+
+/* About_gor section */
+#about_gor {
+  padding: 100px 0;
+  text-align: center;
+  height: 600px;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#about_gor h3 {
+  font-family: 'Nanum', sans-serif;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+#about_gor p {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+  color: #f9f9f9;
+  background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  div {
+    width: 100%;
+  }
+
+  #about_gor p,
+  h3
+   {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+}
+/* introductions section */
+
+#introductions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between each intro-item */
+  padding: 20px;
+}
+
+.intro-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Space between image and text */
+  background-color: rgba(128, 128, 128, 0.1); /* Light grey background for each item */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for each item */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
+}
+
+.intro-item img {
+  max-width: 550px; /* Fixed width for images */
+  border-radius: 8px; /* Rounded corners for images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for images */
+}
+
+.intro-text {
+  flex: 1; /* Take up remaining space */
+}
+
+
+
+.intro-text h2 {
+  margin: 0 0 10px; /* Space below the heading */
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 24px;
+  color: #333; /* Dark text color */
+}
+
+.intro-text p {
+  margin: 0;
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 16px;
+  color: #555; /* Slightly lighter text color */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .intro-item {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+    text-align: center; /* Center-align text on small screens */
+  }
+
+  .intro-item img {
+    max-width: 100%; /* Make image take full width on small screens */
+  }
+}
+
+.medium-intro-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Space between image and text */
+  background-color: rgba(128, 128, 128, 0.1); /* Light grey background for each item */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for each item */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
+}
+
+.medium-intro-item img {
+  max-width: 650px; /* Fixed width for images */
+  border-radius: 8px; /* Rounded corners for images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for images */
+}
+@media screen and (max-width: 768px) {
+  .medium-intro-item {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+    text-align: center; /* Center-align text on small screens */
+  }
+
+  .medium-intro-item img {
+    max-width: 100%; /* Make image take full width on small screens */
+  }
+}
+
+
+/* only-photo */
+
+/* only-photo */
+.only_photo {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* Center-align contents */
+}
+
+.only_photo img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+
+  display: block; /* Ensures image behaves as a block element */
+  margin: 0 auto; /* Center-align image within its parent */
+  margin: 0 auto; /* Center-align image within its parent */
+  border-radius: 8px; /* Rounded corners for images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for images */
+}
+
+@media screen and (max-width: 768px) {
+  .only_photo {
+    flex-direction: column; /* Stack image and text vertically on small screens */
+  }
+}
+
+
+/*  video-container */
+.video-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container iframe {
+  width: 750px; /* Fixed width */
+  height: 475px; /* Fixed height maintaining the 16:9 aspect ratio */
+  max-width: 100%;
+  border: none; /* Remove border if any */
+}
+
+@media screen and (max-width: 768px) {
+  .video-container iframe{
+    max-width: 100%; /* Stack image and text vertically on small screens */
+    max-height: 200px;
+  }
+}
+
+p{
+  line-height: 1.7;
+}
+
+
+/* Gallery section */
+
+#gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Gap between gallery items */
+}
+
+.gallery-item {
+  position: relative; /* Position for place-label */
+  flex: 0 0 calc(50% - 10px); /* Two items per row with gap */
+  overflow: hidden; /* Ensure all content is contained within the item */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%; /* Ensure the image fills its container */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  border-radius: 8px;
+}
+
+
+
+.place-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 5px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.introduction {
+  margin-top: 20px;
+}
+
+.introduction h2 {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.introduction p {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px); /* Two items per row with gap */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px); /* Two items per row with gap */
+  }
+}
+
+
+.qr-codes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.qr-code {
+  text-align: center;
+}
+.qr-code img {
+  max-width: 100px;
+  height: auto;
+}
+
+
+/* Lake Entrance  */
+#about_lake {
+  padding: 100px 0;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  
+}
+
+
+  /*  video */
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the container */
+  transform: translate(-50%, -50%); /* Center the video */
+  z-index: -1;
+}
+
+
+
+#about_lake.content {
+  font-family: 'ZCOOL', sans-serif;
+  font-size: 20px;
+  padding-top: 50%;
+  color: #f9f9f9;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  position: relative;
+  z-index: 1;
+  color: white; /* Adjust text color for readability */
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Optional: semi-transparent background for readability */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* Optional: justify text for better readability */
+  align-items: center; /* Center the h3 element vertically */
+  justify-content: center; /* Center the h3 element horizontally */
+}
+
+.intro-image {
+  width: 80%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+
+
+
+
+
+#image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* Gap between gallery items */
+  padding: 20px;
+}
+
+.galleryb {
+  position: relative;
+  flex: 1 1 calc(33.333% - 40px); /* Three items per row with gap */
+  max-width: calc(33.333% - 40px); /* Ensure max width for items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  height: 300px; /* Set a fixed height for the container */
+}
+
+.galleryb:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.galleryb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  width: calc(100% - 20px);
+}
+
+@media screen and (max-width: 768px) {
+  .galleryb {
+    flex: 1 1 calc(50% - 30px); /* Two items per row with gap */
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .galleryb {
+    flex: 1 1 100%; /* One item per row */
+    max-width: 100%;
+  }
+}
+
