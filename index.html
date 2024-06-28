@@ -87,6 +87,29 @@
     </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var packageItems = document.querySelectorAll('.package-item > a');
+
+        packageItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                var parentItem = this.parentElement;
+
+                if (parentItem.classList.contains('open')) {
+                    parentItem.classList.remove('open');
+                } else {
+                    document.querySelectorAll('.package-item').forEach(function(el) {
+                        el.classList.remove('open');
+                    });
+                    parentItem.classList.add('open');
+                }
+            });
+        });
+    });
+</script>
+
 
 <section id="about">
     <div>

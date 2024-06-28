@@ -225,29 +225,30 @@ header a:visited {
 
 
 /*package*/
-
-
+/* Package styles */
 #packages {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-
 }
 
 .package-item {
   position: relative;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.package-item a {
+.package-item > a {
   display: block;
   padding: 10px 20px;
   background-color: #f0f0f0;
   color: #333;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.package-item a:hover {
+.package-item > a:hover {
   background-color: #ccc;
 }
 
@@ -259,6 +260,8 @@ header a:visited {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   z-index: 1;
+  width: 100%; /* Ensure the dropdown takes up the full width of the parent */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .package-item:hover .dropdown {
@@ -275,6 +278,21 @@ header a:visited {
 
 .dropdown a:hover {
   background-color: #ccc;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .package-item {
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static; /* Reset positioning for mobile */
+  }
+
+  .package-item.open .dropdown {
+    display: block;
+  }
 }
 
 
