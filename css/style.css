@@ -213,10 +213,6 @@ header a:visited {
 }
 
 
-
-
-
-
 #sub-packages{
   padding-top: 80px;
   display: flex;
@@ -224,7 +220,6 @@ header a:visited {
 }
 
 
-/*package*/
 /* Package styles */
 #packages {
   display: flex;
@@ -235,7 +230,9 @@ header a:visited {
 .package-item {
   position: relative;
   text-align: center;
-  margin-bottom: 20px;
+  flex: 1 0 calc(25% - 20px); /* Adjust width to 25% minus margins */
+  max-width: calc(50% - 20px); /* Limit maximum width */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
 }
 
 .package-item > a {
@@ -280,20 +277,13 @@ header a:visited {
   background-color: #ccc;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .package-item {
-    width: 100%;
-  }
-
-  .dropdown {
-    position: static; /* Reset positioning for mobile */
-  }
-
-  .package-item.open .dropdown {
-    display: block;
+    flex: 1 0 calc(25% - 20px); /* Adjust width to 50% minus margins */
+    max-width: calc(50% - 20px); /* Limit maximum width */
   }
 }
+
 
 
 /* About section */

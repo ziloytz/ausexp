@@ -87,6 +87,7 @@
     </div>
 </section>
 
+<!-- JavaScript -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var packageItems = document.querySelectorAll('.package-item > a');
@@ -97,17 +98,32 @@
 
                 var parentItem = this.parentElement;
 
-                if (parentItem.classList.contains('open')) {
-                    parentItem.classList.remove('open');
-                } else {
-                    document.querySelectorAll('.package-item').forEach(function(el) {
-                        el.classList.remove('open');
-                    });
-                    parentItem.classList.add('open');
-                }
+                // Toggle 'open' class on the parent item
+                parentItem.classList.toggle('open');
             });
         });
+
+        var dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Close all dropdowns when a link is clicked
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.package-item')) {
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            }
+        });
     });
+
 </script>
 
 

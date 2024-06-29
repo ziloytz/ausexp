@@ -24,10 +24,15 @@
         </nav>
     </div>
 </menu>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+    });
+</script>
 
 <section id="sub-packages">
     <div class="package-item">
-        <a href="info.html">猫本游玩资讯</a>
+        <a>猫本游玩资讯</a>
         <div class="dropdown">
             <a href="city.html">墨尔本市区</a>
             <a href="victoria-info.html">环游维州</a>
@@ -36,7 +41,7 @@
     </div>
 
     <div class="package-item">
-        <a href="multidays.html">墨尔本多日游</a>
+        <a>墨尔本多日游</a>
         <div class="dropdown">
             <a href="GOR.html">大洋路-多线路选择</a>
             <a href="Lake_e.html">Lakes Entrance湖口镇捕蟹</a>
@@ -45,7 +50,7 @@
     </div>
 
     <div class="package-item">
-        <a href="daytrip.html">墨尔本一日游</a>
+        <a>墨尔本一日游</a>
         <div class="dropdown">
             <a href="phillip_island.html">菲利普岛-企鹅归巢</a>
             <a href="yarra.html">亚拉河谷-著名红酒产区</a>
@@ -55,7 +60,7 @@
     </div>
 
     <div class="package-item">
-        <a href="services.html">旅游服务项目</a>
+        <a>旅游服务项目</a>
         <div class="dropdown">
             <a href="private.html">私人定制深度体验</a>
             <a href="car-service.html">包车服务</a>
@@ -63,6 +68,48 @@
         </div>
     </div>
 </section>
+
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var packageItems = document.querySelectorAll('.package-item > a');
+
+        packageItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                var parentItem = this.parentElement;
+
+                // Toggle 'open' class on the parent item
+                parentItem.classList.toggle('open');
+            });
+        });
+
+        var dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Close all dropdowns when a link is clicked
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.package-item')) {
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            }
+        });
+    });
+
+</script>
+
+
 
 
 <section id="about_gor" style="background: url('project/philips_island_penguin_parade.jpg');   background-size: cover;
