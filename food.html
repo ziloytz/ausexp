@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>澳世旅游-墨尔本</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Nanum+Myeongjo&family=Noto+Serif+Gujarati:wght@300&family=Oswald:wght@300;400&family=Play&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+   
+    </head>
+
+<body>
+<menu id="menu">
+    <div>
+        <h1 href="index.html">澳世旅游</h1>
+        <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <nav>
+            <ul id="up">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.instagram.com/vzheng0129/" target="_blank">Instagram</a></li>
+                <li><a href="mailto:wenlilu439@gmail.com">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</menu>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+    });
+</script>
+
+<section id="sub-packages">
+    <div class="package-item">
+        <a>猫本游玩资讯</a>
+        <div class="dropdown">
+            <a href="city.html">墨尔本市区</a>
+            <a href="victoria-info.html">环游维州</a>
+            <a href="food.html">美食美酒</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本多日游</a>
+        <div class="dropdown">
+            <a href="GOR.html">大洋路-多线路选择</a>
+            <a href="Lake_e.html">Lakes Entrance湖口镇捕蟹</a>
+            <a href="wilson.html">威尔逊国家公园</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本一日游</a>
+        <div class="dropdown">
+            <a href="phillip_island.html">菲利普岛-企鹅归巢</a>
+            <a href="yarra.html">亚拉河谷-著名红酒产区</a>
+            <a href="den.html">蒸汽小火车+丹顿农山脉</a>
+            <a href="city.html">城市人文建筑观光City Walk</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>旅游服务项目</a>
+        <div class="dropdown">
+            <a href="private.html">私人定制深度体验</a>
+            <a href="car-service.html">包车服务</a>
+            <a href="airport.html">机场接送</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var packageItems = document.querySelectorAll('.package-item > a');
+
+        packageItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                var parentItem = this.parentElement;
+
+                // Toggle 'open' class on the parent item
+                parentItem.classList.toggle('open');
+            });
+        });
+
+        var dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Close all dropdowns when a link is clicked
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.package-item')) {
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            }
+        });
+    });
+
+</script>
+
+
+
+<section id="GOR_img">
+
+</section>
+
+<section id="about_gor" style="background: url('project/food-main.jpg');   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;  display: flex; align-items: center; justify-content: center;">
+    <div>
+        <h1 style="color: darkred; font-size: 50px">墨尔本 - 美食与美酒<br> Food & Wine</h1>
+    </div>
+</section>
+
+<section id="small_intro ">
+    <div class="intro-item" style="width: 60%">
+        <div class="intro-text">
+            <p style="line-height: 1.8"><strong>墨尔本的美食与美酒</strong><br>
+
+                墨尔本是澳大利亚的美食之都，以其多元文化和丰富的饮食选择而闻名。无论是高档餐厅、街头小吃还是农贸市场，这座城市都能满足各种口味和需求。墨尔本的美食不仅反映了其多样的文化背景，还展现了本地优质的食材和精湛的烹饪技艺。
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section id="sub_intro">
+    <div class="medium-intro-item">
+        <img src="project/f-hat.png" alt="Image 1">
+        <div class="intro-text">
+            <p><strong>在澳洲米其林评分并不流行，在澳洲会使用帽子标准来为餐厅评分</strong></p>
+            <h2>澳洲帽子餐厅评分简介</h2>
+            <p>澳洲帽子餐厅评分是一个用于评估餐厅品质的权威标准，由《Australian Good Food Guide》进行评定。每年，餐厅根据其食品质量、服务水平和用餐体验等多方面的表现，获得0到4顶帽子的评分。以下是各个评分等级的官方定义：</p>
+            <br>
+            <h3>四顶帽子 (18-19分)</h3>
+            <p><strong>Superlative Food & Wine: Internationally acclaimed</strong><br>
+                这些餐厅提供卓越的食物和葡萄酒，达到国际公认的标准。值得为其专程前往。</p>
+
+            <h3>三顶帽子 (17-16分)</h3>
+            <p><strong>Exceptional Quality of Cuisine: Worth a detour</strong><br>
+                餐厅的菜肴质量非常出色，值得专门绕道去品尝。</p>
+
+            <h3>两顶帽子 (15-14分)</h3>
+            <p><strong>Food Quite Out of the Ordinary: Worth a stop on the way</strong><br>
+                餐厅的食物相当特别，在前往目的地的途中值得停下来享用。</p>
+
+            <h3>一顶帽子 (13-12分)</h3>
+            <p><strong>A Good Restaurant in its category: Commended</strong><br>
+                餐厅在其类别中表现出色，值得推荐。</p>
+            <br>
+            <p>每个帽子评分都代表了餐厅在烹饪艺术、创新性和整体用餐体验方面的卓越表现。这一评分系统帮助食客发现高品质的餐厅，并为其提供可靠的用餐指南。</p>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+<section id="introductions">
+
+    <div class="only_photo">
+        <img src="project/VueMay22_0344.jpg" alt="Image 1">
+    </div>
+    <div class="intro-item">
+
+        <div class="intro-text">
+
+            <h2>墨尔本顶级帽子餐厅推荐</h2>
+
+            <div class="restaurant">
+                <h3>Vue de Monde</h3>
+                <p class="rating">评分: 四顶帽子</p>
+                <p class="description">绝对属于墨尔本最顶级餐厅，位于Rialto Tower的Vue de Monde由厨师Shannon Bennett创立，以其现代化的澳洲料理和壮观的城市景观而著称。餐厅采用可持续发展的理念，致力于为食客提供一流的美食体验。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Attica</h3>
+                <p class="rating">评分: 四顶帽子</p>
+                <p class="description">位于Ripponlea的Attica是墨尔本最著名的餐厅之一，因其创新的澳洲本土食材和独特的烹饪方式而闻名。由著名厨师Ben Shewry掌舵，Attica不仅提供卓越的美食，还注重每一道菜背后的故事和文化。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Brae</h3>
+                <p class="rating">评分: 四顶帽子</p>
+                <p class="description">虽然Brae位于大洋路附件的Birregurra，但它仍然是值得一游的顶级餐厅。由Dan Hunter经营，Brae专注于使用当地种植的食材，提供季节性和可持续性的美食。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Minamishima</h3>
+                <p class="rating">评分: 三顶帽子</p>
+                <p class="description">位于Richmond的Minamishima是墨尔本最好的寿司餐厅之一。主厨Koichi Minamishima以其精湛的技艺和对细节的极致追求，带来正宗而精致的日本寿司体验。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Cutler & Co.</h3>
+                <p class="rating">评分: 三顶帽子</p>
+                <p class="description">位于Fitzroy的Cutler & Co.由Andrew McConnell经营，是一家时尚且充满创意的餐厅。菜单融合了经典和现代的烹饪技艺，为食客带来独特的用餐体验。</p>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="only_photo">
+        <img src="project/f-nohat.jpeg" alt="Image 1">
+    </div>
+    <div class="intro-item">
+
+        <div class="intro-text">
+
+            <h2>墨尔本比较有名餐厅推荐</h2>
+            <p><strong>除了获得帽子评分的餐厅，墨尔本并不缺少其他美味而又有名气的餐厅</strong></p>
+
+            <div class="restaurant">
+                <h3>Chin Chin</h3>
+                <p class="type">类型: 亚洲料理（泰国）</p>
+                <p class="description">位于Flinders Lane，以其现代泰国菜和独特的氛围而闻名。通常需要提前预订。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Cumulus Inc.</h3>
+                <p class="type">类型: 欧陆式餐厅</p>
+                <p class="description">位于Flinders Lane，提供现代欧洲料理和丰富的早午餐选择。适合与朋友或家人一同享用。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Movida</h3>
+                <p class="type">类型: 西班牙风味</p>
+                <p class="description">在Bourke Street附近，提供正宗的西班牙小吃和tapas。是品尝传统西班牙美食的好地方。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Supernormal</h3>
+                <p class="type">类型: 亚洲料理（日本/韩国）</p>
+                <p class="description">位于Flinders Lane，以其现代亚洲料理和独特的餐厅设计而著称。尤其以其烤鸡和面条广受欢迎。</p>
+            </div>
+
+            <div class="restaurant">
+                <h3>Grossi Florentino</h3>
+                <p class="type">类型: 意大利料理</p>
+                <p class="description">在Bourke Street上的经典意大利餐厅，提供正宗的意大利美食和精选葡萄酒。享有悠久的历史和美誉。</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<section id="image-gallery">
+    <div class="intro-text">
+        <h2>墨尔本美酒介绍</h2>
+
+        <div class="wine">
+            <h3>Yarra Valley葡萄酒</h3>
+            <p class="description">Yarra Valley位于墨尔本东北部，以其世界级的葡萄酒庄园而著名。这里生产的葡萄酒包括莎当妮、霞多丽和黑皮诺等品种，受到全球酒评家和爱好者的喜爱。</p>
+        </div>
+
+
+        <div class="wine">
+            <h3>墨尔本啤酒</h3>
+            <p class="description">墨尔本拥有许多著名的啤酒厂和酒吧，提供各种风格的精酿啤酒。您可以在城市中心或者不同的区域找到从传统的英式啤酒到创新的美式IPA等各种啤酒选择。</p>
+        </div>
+
+        <div class="wine">
+            <h3>Craft Cocktails</h3>
+            <p class="description">墨尔本的酒吧文化以其创新和独特的手工鸡尾酒而闻名。许多酒吧和餐厅提供自制的鸡尾酒，采用本地的酒精酒和新鲜的水果、草药和香料制成，为品尝者带来非凡的口味体验。</p>
+        </div>
+
+        <div class="wine">
+            <h3>特色酒吧体验</h3>
+            <p class="description">墨尔本还拥有许多特色酒吧，如隐藏在胡同中的秘密酒吧、屋顶酒吧和主题酒吧，每一个都提供独特的饮酒体验，让您在品尝美酒的同时享受城市的魅力和多样性。比如位于Melbourne Central 的<strong>'Attica'</strong></p>
+        </div>
+
+
+    </div>
+
+    <div class="galleryb">
+        <a href="yarra.html">
+            <img src="project/y-main.jpg" alt="Image 3">
+            <div class="title">热气球体验，亚拉河谷</div>
+        </a>
+    </div>
+
+</section>
+
+
+</body>
+
+
+
+<footer>
+    <div>
+        <h3><a href="index.html">墨尔本 . 澳世旅游</a></h3>
+        <br>
+        <h4>Contact Me</h4>
+        <div class="email-container">
+            <p class="email" style="border: 5px solid #ece0c8; background-color: #ece0c8; width: 90px; border-radius: 3px; "><a href="mailto:wenlilu439@gmail.com" style="color: black">Email</a></p>
+        </div>
+        <p class="address">Doncaster East Melbourne VIC 3109</p>
+        <br>
+        <h3>您可以在下列位置找到我们</h3>
+        <div class="qr-codes">
+
+            <div class="qr-code">
+                <img src="project/xhs-qrcode.jpg" alt="QR Code 1" style="border-radius: 13px; border: 2px white">
+                <p>小红书官方账号</p>
+            </div>
+            <div class="qr-code">
+                <img src="project/wechat-qrcode.jpg" alt="QR Code 2" >
+                <p>微信视频号</p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <p class="copyright">&copy; 澳世旅游 AUSExp </p>
+        <p class="button"><a href="GOR.html">Back to Top</a></p>
+
+
+    </div>
+</footer>
+
+
+
+
+
+</html>
