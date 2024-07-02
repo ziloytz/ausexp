@@ -344,7 +344,8 @@ header a:visited {
 
 /* Target all <li> elements within the specified sections */
 #aj li,
-#comment li {
+#comment li,
+#small_intro li {
   list-style: none; /* Remove default bullets */
 }
 
@@ -995,4 +996,48 @@ p{
     max-width: 100%;
   }
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+}
+th, td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+
+
+#small_intro{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#small_intro .intro-item{
+  width: 75%;
+}
+
+
+#sub_intro{
+  padding-bottom: 20px;
+}
+#sub_intro .medium-intro-item{
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) and (max-width: 576px) {
+  #sub_intro .medium-intro-item{
+    width: 85%;
+  }
+  #small_intro .intro-item{
+    width: 85%;
+  }
+}
+
 

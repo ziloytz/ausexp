@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>澳世旅游-墨尔本</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Nanum+Myeongjo&family=Noto+Serif+Gujarati:wght@300&family=Oswald:wght@300;400&family=Play&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+   
+    </head>
+
+<body>
+<menu id="menu">
+    <div>
+        <h1 href="index.html">澳世旅游</h1>
+        <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <nav>
+            <ul id="up">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.instagram.com/vzheng0129/" target="_blank">Instagram</a></li>
+                <li><a href="mailto:wenlilu439@gmail.com">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</menu>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+    });
+</script>
+
+<section id="sub-packages">
+    <div class="package-item">
+        <a>猫本游玩资讯</a>
+        <div class="dropdown">
+            <a href="city.html">墨尔本市区</a>
+            <a href="victoria-info.html">环游维州</a>
+            <a href="food.html">美食美酒</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本多日游</a>
+        <div class="dropdown">
+            <a href="GOR.html">大洋路-多线路选择</a>
+            <a href="Lake_e.html">Lakes Entrance湖口镇捕蟹</a>
+            <a href="wilson.html">威尔逊国家公园</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本一日游</a>
+        <div class="dropdown">
+            <a href="phillip_island.html">菲利普岛-企鹅归巢</a>
+            <a href="yarra.html">亚拉河谷-著名红酒产区</a>
+            <a href="den.html">蒸汽小火车+丹顿农山脉</a>
+            <a href="city.html">城市人文建筑观光City Walk</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>旅游服务项目</a>
+        <div class="dropdown">
+            <a href="private.html">私人定制深度体验</a>
+            <a href="airport.html">机场接送</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var packageItems = document.querySelectorAll('.package-item > a');
+
+        packageItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                var parentItem = this.parentElement;
+
+                // Toggle 'open' class on the parent item
+                parentItem.classList.toggle('open');
+            });
+        });
+
+        var dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Close all dropdowns when a link is clicked
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.package-item')) {
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            }
+        });
+    });
+
+</script>
+
+
+
+<section id="GOR_img">
+
+</section>
+
+<section id="about_gor" style="background: url('project/airport.jpg');   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;  display: flex; align-items: center; justify-content: center;
+  background-blend-mode: multiply;
+  background-color: rgba(38, 36, 36, 0.597); height: 60%">
+    <div>
+        <h1 style="color: white; font-size: 50px;">机场接送</h1>
+    </div>
+</section>
+
+<section id="small_intro">
+    <div class="intro-item" >
+        <div class="intro-text">
+            <h1>墨尔本机场接送服务简介</h1>
+            <p>我们提供便捷的墨尔本机场接送服务，涵盖Tullamarine和Avalon两个主要机场，为您提供多种车型选择，确保您的旅程舒适顺畅。无论您是商务旅行、家庭度假还是个人出行，我们的专业司机团队将为您提供优质的服务。</p>
+
+            <h2>服务特点</h2>
+
+            <h3>覆盖范围广</h3>
+            <p>我们的接送服务覆盖墨尔本Tullamarine机场和Avalon机场，确保无论您从哪个机场出发或到达，都能享受到便捷的接送服务。</p>
+
+            <h3>多种车型选择</h3>
+            <ul>
+                <li><strong>轿车</strong>: 适合单人或情侣出行，提供舒适实惠的选择。</li>
+                <li><strong>SUV</strong>: 适合家庭或小团体出行，提供更大的空间和舒适度。</li>
+                <li><strong>豪华/经济型商务车</strong>: 适合大团体出行，确保所有乘客都能舒适到达目的地。</li>
+            </ul>
+
+            <h3>游玩套餐串联</h3>
+            <p>机场接送可与游玩定制串联，轻松出行</p>
+
+            <h3>实时航班监控</h3>
+            <p>我们会实时监控您的航班动态，确保能够及时应对航班延误或提前到达的情况，提供无忧的接送体验。</p>
+
+            <h3>安全可靠</h3>
+            <p>所有车辆定期维护，确保乘车安全和舒适。提供安心的出行保障。</p>
+
+            <p>无论您是从Tullamarine还是Avalon机场出发或到达，我们的机场接送服务将为您提供便捷、舒适和安全的出行体验，让旅程从一开始就轻松愉快。</p>
+
+        </div>
+    </div>
+
+
+</section>
+
+<section id="introductions">
+
+    <div class="only_photo">
+        <img src="project/airport-map.png" alt="Image 1">
+    </div>
+
+</section>
+
+
+
+
+
+<footer>
+    <div>
+        <h3><a href="index.html">墨尔本 . 澳世旅游</a></h3>
+        <br>
+        <h4>Contact Me</h4>
+        <div class="email-container">
+            <p class="email" style="border: 5px solid #ece0c8; background-color: #ece0c8; width: 90px; border-radius: 3px; "><a href="mailto:wenlilu439@gmail.com" style="color: black">Email</a></p>
+        </div>
+        <p class="address">Doncaster East Melbourne VIC 3109</p>
+        <br>
+        <h3>您可以在下列位置找到我们</h3>
+        <div class="qr-codes">
+
+            <div class="qr-code">
+                <img src="project/xhs-qrcode.jpg" alt="QR Code 1" style="border-radius: 13px; border: 2px white">
+                <p>小红书官方账号</p>
+            </div>
+            <div class="qr-code">
+                <img src="project/wechat-qrcode.jpg" alt="QR Code 2" >
+                <p>微信视频号</p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <p class="copyright">&copy; 澳世旅游 AUSExp </p>
+        <p class="button"><a href="#sub-packages">Back to Top</a></p>
+
+
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>

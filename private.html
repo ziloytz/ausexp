@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>澳世旅游-墨尔本</title>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@500&family=Nanum+Myeongjo&family=Noto+Serif+Gujarati:wght@300&family=Oswald:wght@300;400&family=Play&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+   
+    </head>
+
+<body>
+<menu id="menu">
+    <div>
+        <h1 href="index.html">澳世旅游</h1>
+        <button id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+        <nav>
+            <ul id="up">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.instagram.com/vzheng0129/" target="_blank">Instagram</a></li>
+                <li><a href="mailto:wenlilu439@gmail.com">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</menu>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu').classList.toggle('open');
+    });
+</script>
+
+<section id="sub-packages">
+    <div class="package-item">
+        <a>猫本游玩资讯</a>
+        <div class="dropdown">
+            <a href="city.html">墨尔本市区</a>
+            <a href="victoria-info.html">环游维州</a>
+            <a href="food.html">美食美酒</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本多日游</a>
+        <div class="dropdown">
+            <a href="GOR.html">大洋路-多线路选择</a>
+            <a href="Lake_e.html">Lakes Entrance湖口镇捕蟹</a>
+            <a href="wilson.html">威尔逊国家公园</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>墨尔本一日游</a>
+        <div class="dropdown">
+            <a href="phillip_island.html">菲利普岛-企鹅归巢</a>
+            <a href="yarra.html">亚拉河谷-著名红酒产区</a>
+            <a href="den.html">蒸汽小火车+丹顿农山脉</a>
+            <a href="city.html">城市人文建筑观光City Walk</a>
+        </div>
+    </div>
+
+    <div class="package-item">
+        <a>旅游服务项目</a>
+        <div class="dropdown">
+            <a href="private.html">私人定制深度体验</a>
+            <a href="airport.html">机场接送</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var packageItems = document.querySelectorAll('.package-item > a');
+
+        packageItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                var parentItem = this.parentElement;
+
+                // Toggle 'open' class on the parent item
+                parentItem.classList.toggle('open');
+            });
+        });
+
+        var dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        dropdownLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Close all dropdowns when a link is clicked
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.package-item')) {
+                document.querySelectorAll('.package-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+            }
+        });
+    });
+
+</script>
+
+
+
+<section id="GOR_img">
+
+</section>
+
+<section id="about_gor" style="background: url('project/m-city.jpg');   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;  display: flex; align-items: center; justify-content: center;
+  background-blend-mode: multiply;
+  background-color: rgba(38, 36, 36, 0.597); height: 60%">
+    <div>
+        <h1 style="color: antiquewhite; font-size: 50px">私人定制深度体验<br> DIY</h1>
+    </div>
+</section>
+
+<section id="small_intro">
+    <div class="intro-item" >
+        <div class="intro-text">
+            <h2>维州游玩地点 (可定制)</h2>
+            <p>以下是各种地点的游玩地点和推荐游玩时间，根据个人需求和时间能不同地点组合起来，或者更换地点的游玩景点，详情请咨询</p>
+            <p class="email" style="border: 5px solid #ece0c8; background-color: #ece0c8; width: 90px; border-radius: 3px; "><a href="mailto:wenlilu439@gmail.com" style="color: black">点击咨询</a></p>
+            <br>
+            <table>
+                <thead>
+                <tr>
+                    <th>地点</th>
+                    <th>游玩景点</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>大洋路-两日一夜</td>
+                    <td>
+                        <ul>
+                            <li>小红帽灯塔和大洋路纪念碑</li>
+                            <li>Lorne</li>
+                            <li>Apollo Bay</li>
+                            <li>肯尼特河</li>
+                            <li>伦敦断桥</li>
+                            <li>洛克阿德峡谷</li>
+                            <li>奥特威国家公园</li>
+                            <li>十二门徒岩</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>湖口镇-两日一夜</td>
+                    <td>
+                        <ul>
+                            <li>考拉岛</li>
+                            <li>90英里海滩</li>
+                            <li>吉普斯兰湖</li>
+                            <li>湖口步行桥</li>
+                            <li>湖口观景台</li>
+                            <li>捕捞螃蟹和抓虾</li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>威尔逊岬国家公园-两日一夜</td>
+                    <td>
+                        <ul>
+                            <li>潮汐河</li>
+                            <li>斯奎基海滩</li>
+                            <li>威尔逊岬灯塔</li>
+                            <li>奥伯伦山</li>
+                            <li>诺曼湾</li>
+                            <li>潮汐河高点</li>
+                            <li>航海湾</li>
+                            <li>大沙丘</li>
+                            <li>南角</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>菲利普岛-两日游或者一日往返</td>
+                    <td>
+                        <ul>
+                            <li>企鹅巡游</li>
+                            <li>考拉保育中心</li>
+                            <li>丘吉尔岛</li>
+                            <li>诺比司角</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>亚拉河谷区-一日游</td>
+                    <td>
+                        <ul>
+                            <li>De Bortoli 酒庄</li>
+                            <li>DOMAINE CHANDON 酒庄</li>
+                            <li>Yering Station 酒庄</li>
+                            <li>Helen and Joeys 酒庄</li>
+                            <li>乘坐热气球</li>
+                            <li>品尝当地风味美食</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>丹顿农山脉-一日游</td>
+                    <td>
+                        <ul>
+                            <li>丹顿农国家公园</li>
+                            <li>普芬比利蒸汽小火车</li>
+                            <li>阿尔弗雷德尼古拉斯纪念花园</li>
+                            <li>奥林达植物园</li>
+                            <li>奥林达 Olinda</li>
+                            <li>萨萨夫拉斯 Sassafras</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>墨尔本市区-一日游</td>
+                    <td>
+                        <ul>
+                            <li>联邦广场</li>
+                            <li>弗林德斯街车站</li>
+                            <li>雅拉河</li>
+                            <li>国家美术馆</li>
+                            <li>维多利亚州立图书馆</li>
+                            <li>维多利亚女王市场</li>
+                            <li>涂鸦街</li>
+                            <li>伯克街购物中心</li>
+                            <li>皇家植物园</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<footer>
+    <div>
+        <h3><a href="index.html">墨尔本 . 澳世旅游</a></h3>
+        <br>
+        <h4>Contact Me</h4>
+        <div class="email-container">
+            <p class="email" style="border: 5px solid #ece0c8; background-color: #ece0c8; width: 90px; border-radius: 3px; "><a href="mailto:wenlilu439@gmail.com" style="color: black">Email</a></p>
+        </div>
+        <p class="address">Doncaster East Melbourne VIC 3109</p>
+        <br>
+        <h3>您可以在下列位置找到我们</h3>
+        <div class="qr-codes">
+
+            <div class="qr-code">
+                <img src="project/xhs-qrcode.jpg" alt="QR Code 1" style="border-radius: 13px; border: 2px white">
+                <p>小红书官方账号</p>
+            </div>
+            <div class="qr-code">
+                <img src="project/wechat-qrcode.jpg" alt="QR Code 2" >
+                <p>微信视频号</p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <p class="copyright">&copy; 澳世旅游 AUSExp </p>
+        <p class="button"><a href="#sub-packages">Back to Top</a></p>
+
+
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>
